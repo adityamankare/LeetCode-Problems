@@ -30,7 +30,7 @@ var maxSubArray = function(nums){
 	let currentMaximum = nums[0];
 
 	for(let i=1; i<(nums.length-1); i++){
-		currentMaximum = Math.max(currentMaximum, currentMaximum + nums[i]);
+		currentMaximum = Math.max(nums[i], currentMaximum + nums[i]);
 		if(globalMaximum < currentMaximum){
 			globalMaximum = currentMaximum;
 		}
