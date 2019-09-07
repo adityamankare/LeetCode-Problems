@@ -25,16 +25,15 @@ console.log(maximumSubArray([2,5,11,-15]));
 
 //Efficient Solution using Kadane's Algorithm//
 var maxSubArray = function(nums){
-
+	
 	let globalMaximum = nums[0];
 	let currentMaximum = nums[0];
-
-	for(let i=1; i<(nums.length-1); i++){
+	
+	for(let i=1; i<nums.length; i++){
 		currentMaximum = Math.max(nums[i], currentMaximum + nums[i]);
-		if(globalMaximum < currentMaximum){
-			globalMaximum = currentMaximum;
-		}
+		globalMaximum < currentMaximum ? globalMaximum = currentMaximum : globalMaximum = globalMaximum; 
 	}
+	
 	return globalMaximum
 }
 
